@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include <boost/asio.hpp>
-#include <networking/tcp_server.h>
+#include "networking/server/tcp_server.h"
 
 using boost::asio::ip::tcp;
 
@@ -28,6 +28,22 @@ int main(int argc, char** argv) {
 //    }
 
     TCPServer server(IPv::v4, 1337);
+
+    server.on_join = [](TCPConnection::pointer server) {
+        std::cout << "user has joined the server: " << server->get_username() << std::endl;
+    };
+
+    server.on_leave = [](TCPConnection::pointer server) {
+        std::cout << "user has left the server: " << server->get_username() << std::endl;
+    };
+
+    server.on_client_message = [&server](const std::string& message) {
+        // parse the message
+        // do server (orderbook) things
+
+
+        server.broadcast(message);
+    };
 
     server.run();
 

@@ -77,19 +77,26 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_networking: phony || networking/CMakeFiles/networking.dir
 
-build networking/CMakeFiles/networking.dir/src/tcp_connection.cpp.obj: CXX_COMPILER__networking_Debug C$:/Users/kevin/CLionProjects/basic_server_client/networking/src/tcp_connection.cpp || cmake_object_order_depends_target_networking
-  DEP_FILE = networking\CMakeFiles\networking.dir\src\tcp_connection.cpp.obj.d
+build networking/CMakeFiles/networking.dir/src/client/tcp_client.cpp.obj: CXX_COMPILER__networking_Debug C$:/Users/kevin/CLionProjects/basic_server_client/networking/src/client/tcp_client.cpp || cmake_object_order_depends_target_networking
+  DEP_FILE = networking\CMakeFiles\networking.dir\src\client\tcp_client.cpp.obj.d
   FLAGS = -g -std=gnu++20
   INCLUDES = -IC:/Users/kevin/CLionProjects/basic_server_client/networking/include -IC:/Users/kevin/source/libraries/boost_1_79_0
   OBJECT_DIR = networking\CMakeFiles\networking.dir
-  OBJECT_FILE_DIR = networking\CMakeFiles\networking.dir\src
+  OBJECT_FILE_DIR = networking\CMakeFiles\networking.dir\src\client
 
-build networking/CMakeFiles/networking.dir/src/tcp_server.cpp.obj: CXX_COMPILER__networking_Debug C$:/Users/kevin/CLionProjects/basic_server_client/networking/src/tcp_server.cpp || cmake_object_order_depends_target_networking
-  DEP_FILE = networking\CMakeFiles\networking.dir\src\tcp_server.cpp.obj.d
+build networking/CMakeFiles/networking.dir/src/server/tcp_connection.cpp.obj: CXX_COMPILER__networking_Debug C$:/Users/kevin/CLionProjects/basic_server_client/networking/src/server/tcp_connection.cpp || cmake_object_order_depends_target_networking
+  DEP_FILE = networking\CMakeFiles\networking.dir\src\server\tcp_connection.cpp.obj.d
   FLAGS = -g -std=gnu++20
   INCLUDES = -IC:/Users/kevin/CLionProjects/basic_server_client/networking/include -IC:/Users/kevin/source/libraries/boost_1_79_0
   OBJECT_DIR = networking\CMakeFiles\networking.dir
-  OBJECT_FILE_DIR = networking\CMakeFiles\networking.dir\src
+  OBJECT_FILE_DIR = networking\CMakeFiles\networking.dir\src\server
+
+build networking/CMakeFiles/networking.dir/src/server/tcp_server.cpp.obj: CXX_COMPILER__networking_Debug C$:/Users/kevin/CLionProjects/basic_server_client/networking/src/server/tcp_server.cpp || cmake_object_order_depends_target_networking
+  DEP_FILE = networking\CMakeFiles\networking.dir\src\server\tcp_server.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/kevin/CLionProjects/basic_server_client/networking/include -IC:/Users/kevin/source/libraries/boost_1_79_0
+  OBJECT_DIR = networking\CMakeFiles\networking.dir
+  OBJECT_FILE_DIR = networking\CMakeFiles\networking.dir\src\server
 
 
 # =============================================================================
@@ -99,7 +106,7 @@ build networking/CMakeFiles/networking.dir/src/tcp_server.cpp.obj: CXX_COMPILER_
 #############################################
 # Link the static library networking\libnetworking.a
 
-build networking/libnetworking.a: CXX_STATIC_LIBRARY_LINKER__networking_Debug networking/CMakeFiles/networking.dir/src/tcp_connection.cpp.obj networking/CMakeFiles/networking.dir/src/tcp_server.cpp.obj
+build networking/libnetworking.a: CXX_STATIC_LIBRARY_LINKER__networking_Debug networking/CMakeFiles/networking.dir/src/client/tcp_client.cpp.obj networking/CMakeFiles/networking.dir/src/server/tcp_connection.cpp.obj networking/CMakeFiles/networking.dir/src/server/tcp_server.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = networking\CMakeFiles\networking.dir
   POST_BUILD = cd .
