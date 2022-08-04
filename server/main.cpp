@@ -29,11 +29,11 @@ int main(int argc, char** argv) {
 
     TCPServer server(IPv::v4, 1337);
 
-    server.on_join = [](TCPConnection::pointer server) {
+    server.on_join = [](const TCPConnection::pointer& server) {
         std::cout << "user has joined the server: " << server->get_username() << std::endl;
     };
 
-    server.on_leave = [](TCPConnection::pointer server) {
+    server.on_leave = [](const TCPConnection::pointer& server) {
         std::cout << "user has left the server: " << server->get_username() << std::endl;
     };
 
